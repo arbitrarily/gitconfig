@@ -7,25 +7,25 @@
 	# add, commit
 	ac = !git add -A && git commit -m
 	# add, commit, push
-    acp = !git add -A && git commit -m "$1" && git push && :
-    # get all new content
-    get = !git pull --rebase && git submodule update --init --recursive
-    # go to root
-    grt = !cd $(git rev-parse --show-toplevel)
-    # push current branch
-    pu = !git push -u origin $(git branch-name)
-    # what changed (detailed log)
-    w = whatchanged
-    # log
-    l = log
-    # log simpler
-    lol = "log --graph --decorate --oneline"
-    # log simple
-    logd = "log --date-order --all --graph --format='%C(green)%h%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s'"
-    # log fancy
-    logf = "log --date-order --all --graph --name-status --format='%C(green)%H%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s'"
-    # what have i changed since yesterday
-    logg = !git log --since yesterday --pretty=short --author `git config user.email`
+	acp = !git add -A && git commit -m "$1" && git push && :
+	# get all new content
+	get = !git pull --rebase && git submodule update --init --recursive
+	# go to root
+	grt = !cd $(git rev-parse --show-toplevel)
+	# push current branch
+	pu = !git push -u origin $(git branch-name)
+	# what changed (detailed log)
+	w = whatchanged
+	# log
+	l = log
+	# log simpler
+	lol = "log --graph --decorate --oneline"
+	# log simple
+	logd = "log --date-order --all --graph --format='%C(green)%h%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s'"
+	# log fancy
+	logf = "log --date-order --all --graph --name-status --format='%C(green)%H%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s'"
+	# what have i changed since yesterday
+	logg = !git log --since yesterday --pretty=short --author `git config user.email`
 [core]
 	editor = subl -n -w
 	compression = 0
@@ -44,4 +44,4 @@
 [fetch]
 	prune = true
 [format]
-  pretty = "%H %ci %ce %ae %d %s"
+	pretty = "%H %ci %ce %ae %d %s"
