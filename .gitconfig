@@ -1,0 +1,36 @@
+[user]
+	name = Marko Bajlovic
+	email = mbajlovic@gmail.com
+[alias]
+	# status quick
+	s = status -s -b
+	# add, commit
+	ac = !git add -A && git commit -m
+	# add, commit, push
+    acp = !git add -A && git commit -m "$1" && git push && :
+    # log simpler
+    lol = "log --graph --decorate --oneline"
+    # log simple
+    logd = "log --date-order --all --graph --format='%C(green)%h%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s'"
+    # log fancy
+    logf = "log --date-order --all --graph --name-status --format='%C(green)%H%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s'"
+    # go to root
+    grt = "! cd $(git rev-parse --show-toplevel)"
+[core]
+	editor = subl -n -w
+	compression = 0
+[color]
+	ui = true
+[merge "npm-merge-driver"]
+	name = automatically merge npm lockfiles
+	driver = npx npm-merge-driver merge %A %O %B %P
+[http]
+	postBuffer = 500M
+	maxRequestBuffer = 100M
+[merge]
+	tool = sublimerge
+[diff]
+	tool = sublimerge
+[fetch]
+	prune = true
+
