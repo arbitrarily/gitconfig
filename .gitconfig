@@ -7,7 +7,7 @@
 	# add, commit
 	ac = !git add -A && git commit -m
 	# add, commit, push
-	acp = !git add -A && git commit -m "$1" && git push && :
+	acp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
 	# get all new content
 	get = !git pull --rebase && git submodule update --init --recursive
 	# go to root
