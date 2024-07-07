@@ -8,6 +8,7 @@
 	ac = !git add -A && git commit -m
 	# add, commit, push
 	acp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
+	apc = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
 	# get all new content
 	get = !git pull --rebase && git submodule update --init --recursive
 	# go to root
@@ -27,8 +28,8 @@
 	# what have i changed since yesterday
 	logg = !git log --since yesterday --pretty=short --author `git config user.email`
 [core]
-	editor = subl -n -w
 	compression = 0
+	editor = zed
 [color]
 	ui = true
 [merge "npm-merge-driver"]
